@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+section{
+    display: flex;
+    flex-direction: row;
+}
+div{
+    border: 1px solid dodgerblue  ;
+}
+.col-xs-6{
+    position: relative;
+    z-index: 2;
+}
+.text{
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    border-radius: 25px;
+    padding: 10px 20px;
+    background-color: #eee;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 1px 4px 0 rgb(0,0,0,0.5);
+}
+.text:active {
+    box-shadow: 1px 1px 0 rgb(0,0,0,0.5);
+    /* position: relative; */
+    top:51%;
+    left: 43.5%;
+  }
+
+.line{
+    background-color: black;
+    position: absolute;
+    height: 10px;
+    width: 100%;
+    /* top: 20%; */
+    z-index: 1;
+}
+/* 상단바 없을 때 */
+#line1{
+    top: 23%;
+}
+#line2{
+    top: 55%;
+}
+#line3{
+    top: 87%;
+}
+#line4{
+    top: 119%;
+}
+#line5{
+    top: 151%;
+}
+/* 상단바 있을 때 */
+/* #line1{
+    top: 32%;
+}
+#line2{
+    top: 64%;
+}
+#line3{
+    top: 96%;
+}
+#line4{
+    top: 128%;
+}
+#line5{
+    top: 160%;
+} */
