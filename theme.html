@@ -4,6 +4,7 @@
   <title>Responsive Slider</title>
   <link rel="stylesheet" href="css/headerbar.css">
   <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="js/theme.js">
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
@@ -12,12 +13,13 @@
     .slider {
       width: 90%;
       margin: 0 auto;
+      margin-top: 20px;
     }
     .slider div {
       height: 300px;
       text-align: center;
       line-height: 500px;
-      background: #1ab188;
+      /* background: #1ab188; */
       color: white;
       font-size: 24px;
     }
@@ -38,7 +40,6 @@
 </header>
 
 <!-- 슬라이드 테마 -->
-<div class="Rectangle">
  <div class="slider">
   <img src="img/한반도.jpg" class="pickimg" onclick="location.href='한반도.html'">
   <img src="img/경복궁.jpg" class="pickimg" onclick="location.href='경복궁.html'">
@@ -46,7 +47,6 @@
   <img src="img/고양이.jpg" class="pickimg">
   <img src="img/캠핑.jpg" class="pickimg">
  </div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -62,14 +62,14 @@
       arrows: true,
       responsive: [
         {
-          breakpoint: 768,
+          breakpoint: 1024,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
           }
         },
         {
-          breakpoint: 480,
+          breakpoint: 768,
           settings: {
             slidesToShow: 1,
             slidesToScroll: 1
@@ -79,6 +79,19 @@
     });
   });
 </script>
+
+<section class="bottom-part">
+  <h1 class="bottom-part-text">추천테마</h1>
+  <img src="img/고양이.jpg" class="themeimg">
+  <img src="img/가을.jpg" class="themeimg">
+  <img src="img/캠핑.jpg" class="themeimg">
+  <img src="img/섬.jpg" class="themeimg">
+  <img src="img/고양이.jpg" class="themeimg">
+  <img src="img/가을.jpg" class="themeimg">
+  <img src="img/캠핑.jpg" class="themeimg">
+  <img src="img/섬.jpg" class="themeimg">
+</section>
+
 
 </body>
 </html>
