@@ -9,11 +9,8 @@
 }
 /* 상단 이미지 */
 .pickimg {
-    width: 270px;
-    height: 300px;
-    margin-left: 1%;
-    margin-right: 1%;
-    border-radius: 15%;
+    margin: 10px;
+    border-radius: 10%;
 }
 /* 추천테마 부분 */
 .bottom-part {

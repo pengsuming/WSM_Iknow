@@ -1,42 +1,84 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>theme</title>
-    <link rel="stylesheet" href="css/theme.css">
-    <link rel="stylesheet" href="css/reset.css">
+  <title>Responsive Slider</title>
+  <link rel="stylesheet" href="css/headerbar.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="js/theme.js">
 
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <style>
+    .slider {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .slider div {
+      height: 300px;
+      text-align: center;
+      line-height: 500px;
+      background: #1ab188;
+      color: white;
+      font-size: 24px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="topbar">
-          <nav>
-            <ul>
-                <li><a href="../index.html">지도</a></li>
-                <li><a href="../theme.html">테마</a></li>
-                <li><a href="../culture.html">문화여행</a></li>
-            </ul>
-          </nav>
-        </div>
-    </header>
+  <!-- 상단바 -->
+  <header>
+    <div class="topbar">
+      <nav>
+        <ul>
+            <li><a href="../index.html">지도</a></li>
+            <li><a href="../theme.html">테마</a></li>
+            <li><a href="../culture.html">문화여행</a></li>
+        </ul>
+      </nav>
+    </div>
+</header>
 
-    <section class="middle-part">
-      <button scr="img/왼쪽.png"></button>
-      <img src="img/한반도.jpg" class="pickimg" onclick="location.href='한반도.html'">
-      <img src="img/경복궁.jpg" class="pickimg" onclick="location.href='경복궁.html'">
-      <img src="img/강아지와_사람.png" class="pickimg" onclick="location.href='강아지와_사람.html'">
-      <img src="img/고양이.jpg" class="pickimg">
-      <img src="img/캠핑.jpg" class="pickimg">
-    </section>
-    <section class="bottom-part">
-      <h1 class="bottom-part-text">추천테마</h1>
-      <img src="img/고양이.jpg" class="themeimg">
-      <img src="img/가을.jpg" class="themeimg">
-      <img src="img/캠핑.jpg" class="themeimg">
-      <img src="img/섬.jpg" class="themeimg">
-      <img src="img/고양이.jpg" class="themeimg">
-      <img src="img/가을.jpg" class="themeimg">
-      <img src="img/캠핑.jpg" class="themeimg">
-      <img src="img/섬.jpg" class="themeimg">
-    </section>
+<!-- 슬라이드 테마 -->
+<div class="Rectangle">
+ <div class="slider">
+  <img src="img/한반도.jpg" class="pickimg" onclick="location.href='한반도.html'">
+  <img src="img/경복궁.jpg" class="pickimg" onclick="location.href='경복궁.html'">
+  <img src="img/강아지와_사람.png" class="pickimg" onclick="location.href='강아지와_사람.html'">
+  <img src="img/고양이.jpg" class="pickimg">
+  <img src="img/캠핑.jpg" class="pickimg">
+ </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      centerMode: true,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  });
+</script>
 
 </body>
 </html>
