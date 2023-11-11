@@ -2,12 +2,17 @@
 <html>
 <head>
   <title>Responsive Slider</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <link rel="icon" href="img/기차.png" type="image/png">
 
   <link rel="stylesheet" href="css/headerbar.css">
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="js/theme.js">
+  <link rel="stylesheet" href="js/headerbar.js">
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
@@ -29,24 +34,29 @@
 </head>
 <body>
   <!-- 상단바 -->
-  <header>
-    <div class="topbar">
-      <nav>
-        <ul>
-            <li><a href="../index.html">지도</a></li>
-            <li><a href="../theme.html">테마</a></li>
-            <li><a href="../culture.html">문화여행</a></li>
-        </ul>
-      </nav>
+  <nav class="navbar">
+    <div class="navbar__logo">
+        <a href="">I know! Korea</a>
     </div>
-</header>
+
+    <ul class="navbar__menu">
+        <li><a href=""></a>지도</li>
+        <li><a href=""></a>테마</li>
+        <li><a href=""></a>기차여행</li>
+    </ul>
+
+    <a href="#" id="navbar__toggleBtn">
+      <i class="fa-solid fa-burger"></i>
+    </a>
+</nav>
+
 
 <!-- 슬라이드 테마 -->
 <div class="Rectangle">
  <div class="slider">
   <img src="img/한반도.jpg" class="pickimg" onclick="location.href='한반도.html'">
-  <img src="img/경복궁.jpg" class="pickimg" onclick="location.href='경복궁.html'">
-  <img src="img/강아지와_사람.png" class="pickimg" onclick="location.href='강아지와_사람.html'">
+  <img src="img/경복궁.jpg" class="pickimg">
+  <img src="img/강아지와_사람.png" class="pickimg">
   <img src="img/고양이.jpg" class="pickimg">
   <img src="img/캠핑.jpg" class="pickimg">
  </div>

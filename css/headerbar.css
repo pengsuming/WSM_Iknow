@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+:root{
+    --text-color: white;
+    --background-color: #253343;
+    --accent-color: #d49466;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+section {
+    top: 60px;
+    display: flex;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background-color: #FFE0B1;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.navbar__logo{
+    font-size: 30px;
+    color: white;
+}
+.navbar__logo a, .navbar__logo a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+
+.navbar__logo i {
+    color: wheat;
+}
+
+.navbar__menu{
+    display: flex;
+    list-style: none;
+    padding-left: 0;
+    padding-top: 10px;
+}
+
+.navbar__menu li{
+    display:inline-block;
+    padding: 5px 30px;
+    font-size: 24px;
+    color: white;
+}
+
+
+.navbar__menu li:hover{
+    background-color: teal;
+    border-radius: 7px;
+}
+
+
+nav>#navbar__toggleBtn{
+    display: none;
+    padding-top: 7px;
+    position: absolute;
+    right: 32px;
+    font-size: 24px;
+    color: white;
+}
+
+@media screen and (max-width: 768px){
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 4px 24px;
+    }
+
+    .navbar__menu{
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        cursor: default;
+    }
+
+    .navbar__menu li{
+        width: 100%;
+        text-align: center;
+        cursor: default;
+    }
+
+    .navbar__icons{
+        display: none;
+        justify-content: center;
+        width: 100%;
+    }
+
+    nav>#navbar__toggleBtn{
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active {
+        display: flex;
+    }
+}
