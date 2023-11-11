@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Responsive Slider</title>
+  <link rel="icon" href="img/기차.png" type="image/png">
+
   <link rel="stylesheet" href="css/headerbar.css">
   <link rel="stylesheet" href="css/theme.css">
   <link rel="stylesheet" href="css/reset.css">
@@ -40,6 +42,7 @@
 </header>
 
 <!-- 슬라이드 테마 -->
+<div class="Rectangle">
  <div class="slider">
   <img src="img/한반도.jpg" class="pickimg" onclick="location.href='한반도.html'">
   <img src="img/경복궁.jpg" class="pickimg" onclick="location.href='경복궁.html'">
@@ -47,6 +50,7 @@
   <img src="img/고양이.jpg" class="pickimg">
   <img src="img/캠핑.jpg" class="pickimg">
  </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
@@ -62,6 +66,7 @@
       arrows: true,
       responsive: [
         {
+          breakpoint: 768,
           breakpoint: 1024,
           settings: {
             slidesToShow: 2,
@@ -69,6 +74,7 @@
           }
         },
         {
+          breakpoint: 480,
           breakpoint: 768,
           settings: {
             slidesToShow: 1,
@@ -82,14 +88,52 @@
 
 <section class="bottom-part">
   <h1 class="bottom-part-text">추천테마</h1>
-  <img src="img/고양이.jpg" class="themeimg">
-  <img src="img/가을.jpg" class="themeimg">
-  <img src="img/캠핑.jpg" class="themeimg">
-  <img src="img/섬.jpg" class="themeimg">
-  <img src="img/고양이.jpg" class="themeimg">
-  <img src="img/가을.jpg" class="themeimg">
-  <img src="img/캠핑.jpg" class="themeimg">
-  <img src="img/섬.jpg" class="themeimg">
+  <div class="array">
+    <div class="leftzone">
+      <div class="zone" style="background-image: url(./img/고양이.jpg);">
+        <div class="textzone">
+          <p>반려동물 동반여행</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/가을.jpg);">
+        <div class="textzone">
+          <p>관광두레</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/캠핑.jpg);">
+        <div class="textzone">
+          <p>11월호 추천 여행지</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/섬.jpg);">
+        <div class="textzone">
+          <p>찾아가고 싶은 섬</p>
+        </div>
+      </div>
+    </div>
+    <div class="rightzone">
+      <div class="zone" style="background-image: url(./img/고양이.jpg);">
+        <div class="textzone">
+          <p>11월호 추천 여행지</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/가을.jpg);">
+        <div class="textzone">
+          <p>찾아가고 싶은 섬</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/캠핑.jpg);">
+        <div class="textzone">
+          <p>반려동물 동반여행</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/섬.jpg);">
+        <div class="textzone">
+          <p>냠냠냠</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 
