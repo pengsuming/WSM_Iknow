@@ -13,7 +13,6 @@ a{
 }
 section {
     top: 60px;
-    display: flex;
 }
 .navbar{
     display: flex;
