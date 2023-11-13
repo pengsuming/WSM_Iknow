@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+    <link rel="icon" href="img/기차.png" type="image/png">
+    
+    <link rel="stylesheet" href="./css/headerbar.css">
+    <script src="https://kit.fontawesome.com/1de9391d12.js" crossorigin="anonymous"></script>
+
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+
+    <style>
+        section {
+            width: 80%;
+            margin: 5% auto; /* 가로 중앙 정렬을 위해 추가 */
+        }
+
+        div{
+            /* border: 1px solid dodgerblue; */
+            padding: 5px;
+        }
+        .order{ 
+            display: flex;
+            align-items: center;
+            margin: 0 auto;
+            justify-content: space-around
+        }
+        .order > div{
+            width: 10vw;
+            height: 20px;
+            background-color: #FFE0B1;
+        }
+        .quiz {
+            background-color: #FFE0B1;
+            width: 70vw;
+            height: 300px;
+            margin: 50px auto; /* 상하 여백은 50px, 좌우 여백은 auto로 설정 */
+            text-align: center;
+            font-size: 3vw;
+            line-height: 300px;
+            border-radius: 10px;
+        }
+
+        .text-center{
+            display: flex;
+            background-color: #FFE0B1;
+            border: solid 10px white;
+            cursor: pointer;
+        }
+        .circle{
+            width: 50px;
+            height: 50px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: white;
+        }
+        .text{
+            margin-left: 10px;
+            align-items : center;
+            text-align : center;
+            padding : 15px 60px;
+
+        }
+        #order1, #order2 {
+            background-color: #d8d8d8;
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="">I know! Korea</a>
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href=""></a>지도</li>
+            <li><a href=""></a>테마</li>
+            <li><a href=""></a>기차여행</li>
+        </ul>
+
+        <a href="#" id="navbar__toggleBtn">
+            <i class="fa-solid fa-burger"></i>
+        </a>
+    </nav>
+
+    <section>
+        <div class="order">
+            <div class="or" id="order1"></div>
+            <div class="or" id="order2"></div>
+            <div class="or" id="order3"></div>
+        </div>
+        <div class="quiz">
+            Q3. 서울에 위치한 궁궐은?
+        </div>
+        <!-- <div class="answer"> -->
+            <div id="1" class="col-md-6 col-xs-12 text-center" onclick="location.href='./navbar_Test.html';">
+                <div class="circle">1</div>
+                <div class="text">창경궁</div>
+            </div>
+            <div id="2" class="col-md-6 col-xs-12 text-center" onclick="location.href='./navbar_Test.html';">
+                <div class="circle">2</div>                    
+                <div class="text">경복궁</div>
+            </div>
+            <div id="3" class="col-md-6 col-xs-12 text-center" onclick="location.href='./navbar_Test.html';">
+                <div class="circle">3</div>
+                <div class="text">창덕궁</div>
+            </div>
+            <div id="4" class="col-md-6 col-xs-12 text-center" onclick="location.href='./navbar_Test.html';">
+                <div class="circle">4</div>
+                <div class="text">덕수궁</div>                
+            </div>
+        <!-- </div> -->
+    </section>
+
+    <script src="./js/header.js"></script>
+    <script>    
+        // .text-center 클래스의 요소를 찾아 이벤트 리스너 추가
+        const textCenterElements = document.querySelectorAll('.text-center');
+    
+        // 각 .text-center 요소에 대해 이벤트 리스너 등록
+        textCenterElements.forEach(element => {
+            element.addEventListener('click', (event) => {
+                // 클릭한 요소의 id 값 가져오기
+                const clickedId = event.currentTarget.id;
+    
+                // 각 요소에 따라 다르게 처리
+                switch (clickedId) {
+                    case '1':
+                        alert('오답입니다.');
+                        break;
+                    case '2':
+                        // #2를 클릭할 때 다른 alert 메시지 출력
+                        alert('정답입니다!');
+                        break;
+                    case '3':
+                        alert('오답입니다.');
+                        break;
+                    case '4':
+                        alert('오답입니다.');
+                        break;
+                    default:
+                        // 예외 처리
+                        alert('올바르지 않은 선택입니다.');
+                        break;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

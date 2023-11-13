@@ -4,12 +4,13 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/map.css">
-        <title>Document</title>
+        <link rel="stylesheet" href="./css/map2.css">
+        <link rel="stylesheet" href="./css/headerbar.css">
+        <title>test1</title>
         <script src="https://kit.fontawesome.com/1de9391d12.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Hahmlet:wght@200;400;700&family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Do+Hyeon&family=Hahmlet:wght@200;400;700&family=Noto+Sans+KR:wght@900&display=swap" rel="stylesheet"> -->
     
         <!-- 합쳐지고 최소화된 최신 CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
@@ -20,122 +21,13 @@
         
     </head>
     <style>
-        :root{
-            --text-color: #white;
-            --background-color: #253343;
-            --accent-color: #d49466;
-        }
-
         body{
-            margin: 0;
-            font-family: 'Black Han Sans', sans-serif;
-        }
-
-        a{
-            text-decoration: none;
-            color: var(--text-color);
-        }
-        .navbar{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: blueviolet;
-            padding: 4px 12px;
-        }
-
-        .navbar__logo{
-            font-size: 30px;
-            color: white;
-        }
-
-        /* .navbar__logo i {
-            color: wheat;
-        } */
-
-        .navbar__menu{
-            display: flex;
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .navbar__menu li{
-            padding: 4px 12px;
-            font-size: 24px;
-            color: white;
-        }
-
-        .navbar__menu li:hover{
-            background-color: teal;
-            border-radius: 7px;
-        }
-
-        .navbar__icons{
-            list-style: none;
-            color: white;
-            display: flex;
-            padding-left: 0;
-        }
-
-        .navbar__icons li{
-            padding: 4px 12px;
-        }
-
-        .navbar__toggleBtn{
-            display: none;
-            position: absolute;
-            right: 32px;
-            font-size: 24px;
-            color: white;
-        }
-
-        section {
-            display: flex;
-            flex-direction: row;
-            position: relative;
-            z-index: 0; /* 설정합니다. */
-        }
-
-
-        
-        @media screen and (max-width: 768px){
-            .navbar{
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 4px 24px;
-            }
-
-            .navbar__menu{
-                display: none;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            .navbar__menu li{
-                width: 100%;
-                text-align: center;
-            }
-
-            .navbar__icons{
-                display: none;
-                justify-content: center;
-                width: 100%;
-            }
-
-            .navbar__toggleBtn{
-                display: block;
-            }
-
-            .navbar__menu.active,
-            .navbar__icons.active {
-                display: flex;
-            }
+            overflow-x:hidden; overflow-y:auto;
         }
     </style>
     <body>
         <nav class="navbar">
             <div class="navbar__logo">
-                <!-- <i class="fa fa-meetup" aria-hidden="true"></i> -->
                 <a href="">I know! Korea</a>
             </div>
 
@@ -145,12 +37,9 @@
                 <li><a href=""></a>기차여행</li>
             </ul>
 
-            <ul class="navbar__icons">
-                <li><i class="fa-brands fa-github"></i></li>
-            </ul>
-
-            <a href="#" class="navbar__toggleBtn">
+            <a href="#" id="navbar__toggleBtn">
                 <i class="fa-solid fa-burger"></i>
+            </a>
         </nav>
 
         <section>
@@ -194,12 +83,12 @@
                         <div class="text">제주도</div>
                     </div>
                     
+                    <div class="line" id="line1"></div>
+                    <div class="line" id="line2"></div>
+                    <div class="line" id="line3"></div>
+                    <div class="line" id="line4"></div>
+                    <div class="line" id="line5"></div>
                 </div>
-                <div class="line" id="line1"></div>
-                <div class="line" id="line2"></div>
-                <div class="line" id="line3"></div>
-                <div class="line" id="line4"></div>
-                <div class="line" id="line5"></div>
             </div>
         </section>
         
@@ -217,19 +106,12 @@
                 }
             }
 
-            // 페이지 로딩 시와 창 크기 변경 시 호출
             window.addEventListener('load', checkViewportSize);
             window.addEventListener('resize', checkViewportSize);
-
-            const toggleBtn = document.querySelector('.navbar__toggleBtn');
-            const menu = document.querySelector('.navbar__menu');
-            const icons = document.querySelector('.navbar__icons');
-    
-            toggleBtn.addEventListener('click', () => {
-                menu.classList.toggle('active');
-                icons.classList.toggle('active');
-            });
+            //hearder script
+            // 페이지 로딩 시와 창 크기 변경 시 호출
         </script>
+        <script src="./js/header.js"></script>
     </body>
     
 </html>

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+.banner{
+    /* background-image: url(./img/banner.png); */
+    width: 100%;
+    /* height: 700px; */
+    object-fit: cover;
+}
+img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+.button{
+    display: flex;
+    justify-content: space-around;
+}
+.route{
+    /* border: 1px solid dodgerblue; */
+    background-color: deepskyblue;
+    color: white;
+    font-size: 1.5em;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-family: 'Black Han Sans', sans-serif;
+}
+.route:hover {
+    background-color: dodgerblue;
+}
+
+
+h1{
+    text-align: center;
+    padding: 10px;
+    font-family: 'Black Han Sans', sans-serif;
+}
+.content{
+    width: 80%;
+    height: auto;
+    background-color: wheat;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.content2, .content3, .content4 {
+    display: none;
+}
+.station_nm{
+    background-color: cadetblue;
+    width: auto;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.station_ct{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+/* .station_img{
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+} */
+.station_img>img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.station_tt{
+    width: 80%;
+    height: 100px;
+    line-height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+.station_ct1, .station_ct2{
+    flex-direction: column;
+    width: 50%;
+    margin: 10px auto;
+    justify-content: center; 
+    align-items: center;
+    display: flex;
+}
+@media screen and (max-width: 768px){
+    .station_ct{
+        display:contents ;
+    }   
+}

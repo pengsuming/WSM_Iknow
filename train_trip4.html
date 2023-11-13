@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기차여행</title>
+    
+    <link rel="stylesheet" href="./css/headerbar.css">
+    <link rel="stylesheet" href="./css/trip.css">
+    <script src="https://kit.fontawesome.com/1de9391d12.js" crossorigin="anonymous"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <style>
+        #btn4 {
+            background-color: lightcoral;
+        }
+        #btn4:hover{
+            background-color: indianred;
+        }
+        @media screen and (max-width: 768px){
+      
+            .banner img {
+                /* Add the URL of the smaller image you want to use for screens <= 768px */
+                content: url('./img/banner2.png');
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="">I know! Korea</a>
+        </div>
+
+        <ul class="navbar__menu">
+            <li><a href=""></a>지도</li>
+            <li><a href=""></a>테마</li>
+            <li><a href=""></a>기차여행</li>
+        </ul>
+
+        <a href="#" id="navbar__toggleBtn">
+            <i class="fa-solid fa-burger"></i>
+        </a>
+    </nav>
+
+    <section>
+        <div class="banner">
+            <img src="./img/banner.png" alt="">
+        </div>
+        <div class="button">
+            <div class="route" id="btn1" onclick="location.href='./train_trip.html';">경부선</div>
+            <div class="route" id="btn2" onclick="location.href='./train_trip2.html';">중앙선</div>
+            <div class="route" id="btn3" onclick="location.href='./train_trip3.html';">동해선</div>
+            <div class="route" id="btn4" onclick="location.href='./train_trip4.html';">경전선</div>
+        </div>
+        <h1>경전선 따라 즐기는 여행</h1>
+        <div class="content content1">
+            <div class="station_nm">창원역</div>
+            <div class="station_ct">
+                <div class="station_ct1">
+                    <div class="station_img">
+                        <img src="./img/station_img/station25.jpg" alt="이미지 25">
+                    </div>
+                    <div class="station_tt">
+                        마산어시장
+                    </div>
+                </div>
+                <div class="station_ct2">
+                    <div class="station_img">
+                        <img src="./img/station_img/station26.jpg" alt="이미지 26">
+                    </div>
+                    <div class="station_tt">
+                        단감테마공원
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content content2">
+            <div class="station_nm">천안아산역</div>
+            <div class="station_ct">
+                <div class="station_ct1">
+                    <div class="station_img">
+                        <img src="./img/station_img/station3.jpg" alt="이미지 3">
+                    </div>
+                    <div class="station_tt">
+                        독립기념관
+                    </div>
+                </div>
+                <div class="station_ct2">
+                    <div class="station_img">
+                        <img src="./img/station_img/station4.jpg" alt="이미지 4">
+                    </div>
+                    <div class="station_tt">
+                        뚜쥬루과자점 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content content3">
+            <div class="station_nm">동대구역</div>
+            <div class="station_ct">
+                <div class="station_ct1">
+                    <div class="station_img">
+                        <img src="./img/station_img/station5.jpg" alt="이미지 5">
+                    </div>
+                    <div class="station_tt">스파크랜드</div>
+                </div>
+                <div class="station_ct2">
+                    <div class="station_img">
+                        <img src="./img/station_img/station6.jpg" alt="이미지 6">
+                    </div>
+                    <div class="station_tt">동화사</div>
+                </div>
+            </div>
+        </div>
+        <div class="content content4">
+            <div class="station_nm">부산역</div>
+            <div class="station_ct">
+                <div class="station_ct1">
+                    <div class="station_img">
+                        <img src="./img/station_img/station7.jpg" alt="이미지 7">
+                    </div>
+                    <div class="station_tt">뮤지엄 원</div>
+                </div>
+                <div class="station_ct2">
+                    <div class="station_img">
+                        <img src="./img/station_img/station8.jpeg" alt="이미지 8">
+                    </div>
+                    <div class="station_tt">해운대해수욕장</div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </section>
+    
+    <script src="./js/header.js"></script>
+
+</body>
+</html>
