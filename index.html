@@ -1,103 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/map.css">
-    <link rel="icon" href="img/기차.png" type="image/png">
-    
-    
-    <!-- 합쳐지고 최소화된 최신 CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <!-- 부가적인 테마 -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-    
-    <title>I Know! Korea</title>
+  <title>Responsive Slider</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="icon" href="img/기차.png" type="image/png">
 
+  <link rel="stylesheet" href="css/headerbar.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <script src="./js/headerbar.js"></script>
+
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <script src="https://kit.fontawesome.com/1de9391d12.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="./js/header.js"></script>
+
+  <style>
+    .slider {
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    .slider div {
+      height: 300px;
+      text-align: center;
+      line-height: 500px;
+      /* background: #1ab188; */
+      color: white;
+      font-size: 24px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        
-    </header>
-    <section>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-3 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/front_train.png" alt="">
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text" onclick="location.href='quiz.html'">서울</div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">경기도</div>
-                </div>
-                <div class="col-md-3 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">인천</div>
-                </div>
+  <!-- 상단바 -->
+  <nav class="navbar">
+    <div class="navbar__logo">
+        <a href="" onclick="location.href='index.html'">I know! Korea</a>
+    </div>
 
-                <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">강원도</div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">경상도</div>
-                </div>
-                <div class="col-md-4 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">전라도</div>
-                </div>
+    <ul class="navbar__menu">
+        <li onclick="location.href='navbar_Test.html'"><a href=""></a>퀴즈</li>
+        <li onclick="location.href='index.html'"><a href=""></a>테마</li>
+        <li onclick="location.href='train_trip.html'"><a href=""></a>기차여행</li>
+    </ul>
 
-                <div class="col-md-6 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">충청도</div>
-                </div>
-                <div class="col-md-6 col-sm-4 col-xs-6 text-center">
-                    <img src="./img/train.png" alt="">
-                    <div class="text">제주도</div>
-                </div>
-                
-            </div>
-            <div class="line" id="line1"></div>
-            <div class="line" id="line2"></div>
-            <div class="line" id="line3"></div>
-            <div class="line" id="line4"></div>
-            <div class="line" id="line5"></div>
-        </div>
-    </section>
-    
-</body>
+    <a href="#" id="navbar__toggleBtn">
+      <i class="fa-solid fa-burger"></i>
+    </a>
+</nav>
+
+
+<!-- 슬라이드 테마 -->
+<div class="Rectangle">
+ <div class="slider">
+  <img src="img/한반도.jpg" class="pickimg" onclick="location.href='한반도.html'">
+  <img src="img/경복궁.jpg" class="pickimg">
+  <img src="img/강아지와_사람.png" class="pickimg">
+  <img src="img/고양이.jpg" class="pickimg">
+  <img src="img/캠핑.jpg" class="pickimg">
+ </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script>
-    function checkViewportSize() {
-            var line4 = document.getElementById("line4");
-            var line5 = document.getElementById("line5");
-            
-            if (window.innerWidth <= 768) { // 원하는 조건 (예: 768px 이하)
-                line4.style.display = "block";
-                line5.style.display = "block";
-            } else {
-                line4.style.display = "none";
-                line5.style.display = "none";
-            }
+  $(document).ready(function(){
+    $('.slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      centerMode: true,
+      arrows: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+          }
+        },
+        {
+          breakpoint: 480,
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
         }
-
-        // 페이지 로딩 시와 창 크기 변경 시 호출
-        window.addEventListener('load', checkViewportSize);
-        window.addEventListener('resize', checkViewportSize);
-
-        const toggleBtn = document.querySelector('.navbar_toogleBtn');
-        const menu = document.querySelector('.navbar__menu');
-        const icons = document.querySelector('.navbar__icons');
-
-        toggleBtn.addEventListener('click', () => {
-            menu.classList.toggle('active');
-            icons.classList.toggle('active');
-        });
+      ]
+    });
+  });
 </script>
+
+<section class="bottom-part">
+  <h1 class="bottom-part-text">추천테마</h1>
+  <div class="array">
+    <div class="leftzone">
+      <div class="zone" style="background-image: url(./img/고양이.jpg);">
+        <div class="textzone">
+          <p>반려동물 동반여행</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/가을.jpg);">
+        <div class="textzone">
+          <p>관광두레</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/캠핑.jpg);">
+        <div class="textzone">
+          <p>11월호 추천 여행지</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/섬.jpg);">
+        <div class="textzone">
+          <p>찾아가고 싶은 섬</p>
+        </div>
+      </div>
+    </div>
+    <div class="rightzone">
+      <div class="zone" style="background-image: url(./img/KakaoTalk_20231114_140122631_03.jpg);">
+        <div class="textzone">
+          <p>고캠핑</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/KakaoTalk_20231114_140122631.jpg);">
+        <div class="textzone">
+          <p>웰니스 관광지</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/KakaoTalk_20231114_140122631_01.jpg);">
+        <div class="textzone">
+          <p>워케이션</p>
+        </div>
+      </div>
+      <div class="zone" style="background-image: url(./img/KakaoTalk_20231114_140122631_02.jpg);">
+        <div class="textzone">
+          <p>전통한옥</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</body>
 </html>

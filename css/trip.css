@@ -35,6 +35,7 @@ h1{
     text-align: center;
     padding: 10px;
     font-family: 'Black Han Sans', sans-serif;
+
 }
 .content{
     width: 80%;
@@ -42,9 +43,10 @@ h1{
     background-color: wheat;
     margin: 0 auto;
     padding-bottom: 10px;
+    margin-bottom: 30px;
 }
 .content2, .content3, .content4 {
-    display: none;
+    /* display: none; */
 }
 .station_nm{
     background-color: cadetblue;
@@ -52,6 +54,8 @@ h1{
     height: 50px;
     text-align: center;
     line-height: 50px;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 3rem;
 }
 .station_ct{
     display: flex;
@@ -76,6 +80,9 @@ h1{
     line-height: 100px;
     background-color: white;
     border-radius: 10px;
+    font-size: 3rem;
+    font-family: 'Black Han Sans', sans-serif;
+    margin-top: 5px;
     
 }
 .station_ct1, .station_ct2{

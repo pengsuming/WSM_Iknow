@@ -59,29 +59,29 @@ div{
 } */
 
 #line1{
-    top: 31%;
+    top: 29%;
 }
 #line2{
-    top: 62%;
+    top: 58%;
 }
 #line3{
-    top: 93%;
+    top: 87%;
 }
 @media screen and (max-width: 768px){
     #line1{
-        top: 29%;
+        top: 27.5%;
     }
     #line2{
-        top: 61%;
+        top: 57%;
     }
     #line3{
-        top: 92%;
+        top: 86%;
     }
     #line4{
-        top: 123%;
+        top: 115%;
     }
     #line5{
-        top: 154%;
+        top: 144%;
     }
     
 }
