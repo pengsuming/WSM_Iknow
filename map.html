@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도</title>
+    <link rel="stylesheet" href="css/headerbar.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            width: 60%;
+            height: 80vh;
+            margin: 3%;
+        }
+        #info {
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            margin-top: 5%;
+        }
+        .description {
+            font-size: 24px;
+            color: #555;
+        }
+        .content {
+            display: flex;
+            flex-grow: 1;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/1de9391d12.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=762ff92faa16d0a8452ef6fe6c7610e6"></script>
+    <script src="./js/header.js"></script>
+</head>
+<body>
+    <!-- 상단바 -->
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <a href="한반도.html">I know! Korea</a>
+        </div>
+    
+        <ul class="navbar__menu">
+            <li onclick="location.href='navbar_Test.html'"><a href=""></a>퀴즈</li>
+            <li onclick="location.href='index.html'"><a href=""></a>테마</li>
+            <li onclick="location.href='train_trip.html'"><a href=""></a>기차여행</li>
+        </ul>
+    
+        <a href="#" id="navbar__toggleBtn">
+          <i class="fa-solid fa-burger"></i>
+        </a>
+    </nav>
+
+    <div class="content">
+        <div id="map"></div>
+        <div id="info">
+            <div class="title" id="place-title"></div>
+            <div class="description" id="place-description"></div>
+        </div>
+    </div>
+
+    <script>
+        function getQueryParams() {
+            var params = {};
+            window.location.search.substring(1).split('&').forEach(function(param) {
+                var keyValue = param.split('=');
+                params[keyValue[0]] = decodeURIComponent(keyValue[1]);
+            });
+            return params;
+        }
+
+        var params = getQueryParams();
+        var lat = parseFloat(params.lat);
+        var lng = parseFloat(params.lng);
+        var title = params.title;
+        var description = params.description;
+
+        var mapContainer = document.getElementById('map'),
+            mapOption = {
+                center: new kakao.maps.LatLng(lat, lng),
+                level: 3
+            };
+
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        var marker = new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(lat, lng)
+        });
+        marker.setMap(map);
+
+        document.getElementById('place-title').innerText = title;
+        document.getElementById('place-description').innerText = description;
+    </script>
+</body>
+</html>

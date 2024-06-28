@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>추천! 가볼만한 곳</title>
     <link rel="icon" href="img/기차.png" type="image/png">
 
@@ -9,7 +11,32 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/place.css">
     <script src="https://kit.fontawesome.com/1de9391d12.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=762ff92faa16d0a8452ef6fe6c7610e6&libraries=services"></script>
+    <script>
+        function goToMap(element) {
+            const address = element.getAttribute('data-address');
+            const title = encodeURIComponent(element.getAttribute('data-title'));
+            const description = encodeURIComponent(element.getAttribute('data-description'));
+            const detail = encodeURIComponent(element.getAttribute('data-detail'));
 
+            const geocoder = new kakao.maps.services.Geocoder();
+            geocoder.addressSearch(address, function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    const lat = result[0].y;
+                    const lng = result[0].x;
+                    window.location.href = `map.html?lat=${lat}&lng=${lng}&title=${title}&description=${description}&detail=${detail}`;
+                }
+            });
+        }
+
+        function updateDescription(element) {
+            const title = element.getAttribute('data-title');
+            const description = element.getAttribute('data-description');
+            const detail = element.getAttribute('data-detail');
+            document.querySelector('.rightzone .titlezone').innerText = title;
+            document.querySelector('.rightzone .description').innerText = description;
+        }
+    </script>
 </head>
 <body>
     <!-- 상단바 -->
@@ -20,131 +47,111 @@
     
         <ul class="navbar__menu">
             <li onclick="location.href='navbar_Test.html'"><a href=""></a>퀴즈</li>
-        <li onclick="location.href='index.html'"><a href=""></a>테마</li>
-        <li onclick="location.href='train_trip.html'"><a href=""></a>기차여행</li>
+            <li onclick="location.href='index.html'"><a href=""></a>테마</li>
+            <li onclick="location.href='train_trip.html'"><a href=""></a>기차여행</li>
         </ul>
     
         <a href="#" id="navbar__toggleBtn">
           <i class="fa-solid fa-burger"></i>
         </a>
     </nav>
+
+    <h1 class="placetext">추천! 가볼만한 곳</h1> 
+    <div class="array">
+        <div class="leftzone">
+            <div class="titlezone">
+                [2023년 11월] 이야기가 있는 고택
+            </div>
+            <div class="zone" data-address="경기도 남양주시 조안면 다산로747번길 11 (조안면)" data-title="정약용유적지(남양주)" data-description="경기도 남양주시 조안면 다산로747번길 11 (조안면)" data-detail="#가족여행 #관광지 #교과서속여행 # 다산생태공원 #다산유적지">
+                <div class="imagezone" style="background-image: url(./img/정약용.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">정약용의 숨결이 서린 곳,<br>남양주 여유당</div>
+                    <div class="textzone2" style="color: #8E8E8E;">경기도 남양주시</div>
+                </div>
+                <div class="description-content" style="display:none;">
+                    <p>경기도 남양주시 조안면 다산로747번길 11 (조안면)</p><br>
+                    <p>#가족여행 #관광지 #교과서속여행 #다산생태공원 #다산유적지</p>
+                </div>
+            </div>
+            <div class="zone" data-address="경상남도 함양군 지곡면 개평길 50-13" data-title="함양 일두고택" data-description="정여창 가문의 역사를 느끼는, 함양 일두고택">
+                <div class="imagezone" style="background-image: url(./img/일두고택.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">정여창 가문의 역사를 느끼는<br>함양 일두고택</div>
+                    <div class="textzone2" style="color: #8E8E8E;">경상남도 함양군</div>
+                </div>
+            </div>
+            <div class="zone" data-address="인천광역시 중구 신포로39번길 74 (송학동1가)" data-title="인천시민애집" data-description="근현대사 중심지의 변화!, 인천시민애집">
+                <div class="imagezone" style="background-image: url(./img/인천시민애집.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">근현대사 중심지의 변화!<br>인천시민애집</div>
+                    <div class="textzone2" style="color: #8E8E8E;">인천 중구</div>
+                </div>
+            </div>
+            <div class="zone" data-address="충청남도 논산시 노성면 노성산성길 50 (노성면)" data-title="논산 명재고택" data-description="자세히 보아야 더 어여쁜, 논산 명재고택">
+                <div class="imagezone" style="background-image: url(./img/명재고택.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">자세히 보아야 더 어여쁜<br>논산 명재고택</div>
+                    <div class="textzone2" style="color: #8E8E8E;">충청남도 논산시</div>
+                </div>
+            </div>
+        </div>
+        <div class="rightzone">
+            <div class="titlezone">
+                [2023년 10월] 맛있는 골목여행
+            </div>
+            <div class="zone" data-address="경상남도 하동군 하동읍 신기리" data-title="하동재첩특화마을" data-description="재첩 요리를 한자리에!, 하동재첩특화마을" onclick="goToMap(this); updateDescription(this);">
+                <div class="imagezone" style="background-image: url(./img/하동재첩특화마을.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">재첩 요리를 한자리에!<br>하동재첩특화마을</div>
+                    <div class="textzone2" style="color: #8E8E8E;">경상남도 하동군</div>
+                </div>
+            </div>
+            <div class="zone" data-lat="35.116" data-lng="129.041">
+                <div class="imagezone" style="background-image: url(./img/초량육미거리.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">미식 탐방의 진수<br>부산 초량육미거리</div>
+                    <div class="textzone2" style="color: #8E8E8E;">부산 동구</div>
+                </div>
+            </div>
+            <div class="zone" data-lat="37.476" data-lng="126.617">
+                <div class="imagezone" style="background-image: url(./img/짜장면박물관.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">북성동원조자장면거리와<br>짜장면박물관</div>
+                    <div class="textzone2" style="color: #8E8E8E;">인천 중구</div>
+                </div>
+            </div>
+            <div class="zone" data-lat="36.784" data-lng="127.226">
+                <div class="imagezone" style="background-image: url(./img/병천순대거리.jpg);"></div>
+                <div class="text">
+                    <div class="textzone1">푸짐한 순대국밥 한 그릇<br>천안 병천순대거리</div>
+                    <div class="textzone2" style="color: #8E8E8E;">충청남도 천안시</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-    </script>
-
-<h1 class="placetext">추천! 가볼만한 곳</h1> 
-<div class="array">
-    <div class="leftzone">
-        <div class="titlezone">
-            [2023년 11월] 이야기가 있는 고택
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/정약용.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    정약용의 숨결이 서린 곳,<br>남양주 여유당
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    경기도 남양주시
-                </div>
-            </div>
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/일두고택.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    정여창 가문의 역사를 느끼는<br>함양 일두고택
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    경상남도 함양군
-                </div>
-            </div>
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/인천시민애집.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    근현대사 중심지의 변화!<br>인천시민애집
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    인천 중구
-                </div>
-            </div>
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/명재고택.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    자세히 보아야 더 어여쁜<br>논산 명재고택
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    충청남도 논산시
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="rightzone">
-        <div class="titlezone">
-            [2023년 10월] 맛있는 골목여행
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/하동재첩특화마을.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    재첩 요리를 한자리에!<br>하동재첩특화마을
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    경상남도 하동군
-                </div>
-            </div>
-            
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/초량육미거리.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    미식 탐방의 진수<br>부산 초량육미거리
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    부산 동구
-                </div>
-            </div>
-            
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/짜장면박물관.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    북성동원조자장면거리와<br>짜장면박물관
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    인천 중구
-                </div>
-            </div>
-            
-        </div>
-        <div class="zone">
-            <div class="imagezone" style="background-image: url(./img/병천순대거리.jpg);">
-            </div>
-            <div class="text">
-                <div class="textzone1">
-                    푸짐한 순대국밥 한 그릇<br>천안 병천순대거리
-                </div>
-                <div class="textzone2" style="color: #8E8E8E;">
-                    충청남도 천안시
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-
+        document.querySelectorAll('.zone').forEach(function(zone) {
+            zone.addEventListener('click', function() {
+                var address = this.getAttribute('data-address');
+                var title = this.getAttribute('data-title');
+                var description = this.getAttribute('data-description');
+                var detail = this.getAttribute('data-detail');
+    
+                // 주소를 좌표로 변환
+                var geocoder = new kakao.maps.services.Geocoder();
+                geocoder.addressSearch(address, function(result, status) {
+                    if (status === kakao.maps.services.Status.OK) {
+                        var lat = result[0].y;
+                        var lng = result[0].x;
+                        var url = `map.html?lat=${lat}&lng=${lng}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&detail=${encodeURIComponent(detail)}`;
+                        window.open(url, '_blank');
+                    } else {
+                        alert('주소 변환에 실패했습니다.');
+                    }
+                });
+            });
+        });
+        </script>
 </body>
 </html>
